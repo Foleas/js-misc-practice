@@ -26,10 +26,6 @@ const staircase = (n) => {
     }
     stringReturn += "\n";
   });
-  //   console.log([...Array(n).keys()]);
-  //   return [...Array(n).keys()].forEach((number) =>
-  //     console.log("number", number)
-  //   );
   return stringReturn;
 };
 
@@ -37,3 +33,17 @@ console.log(staircase(5));
 console.log(staircase(3));
 console.log(staircase(0));
 console.log(staircase(1));
+
+const staircase2 = (n) => {
+  let output = "";
+  for (let i = 1; i <= n; i++) {
+    output += " ".repeat(n - i) + "#".repeat(i);
+    if (i !== n) output += "\n";
+  }
+  return output;
+};
+
+console.log(staircase2(5));
+console.log(staircase2(3));
+console.log(staircase2(0));
+console.log(staircase2(1));
