@@ -4,4 +4,15 @@ const uniqueSorted = (arr) => {
   return [...new Set(arr)].sort((a, b) => a - b);
 };
 
+const uniqueSorted2 = (arr) => {
+  return arr.filter((value, index, array) => {
+    // console.log("value", value);
+    // console.log("index", index);
+    // console.log("array", array);
+    // console.log("indexOf", array.indexOf(value));
+    return array.indexOf(value) === index;
+  });
+};
+
 console.log(uniqueSorted(nums)); // [0,1,2,3,8,9,27,28]
+console.log(uniqueSorted2(nums)); // [0,1,2,3,8,9,27,28]
