@@ -31,9 +31,13 @@ function solutionMine(numberArray) {
 }
 
 function solution(A) {
-  // only positive values, sorted
+  if (A.length > 100000) return false;
+  // A = A.filter(
+  //   (value, index, array) =>
+  //     value > 0 && value <= 1000000 && array.indexOf(value) === index
+  // ).sort();
   A = A.filter((x) => x >= 1).sort();
-  console.log("filter & sorted", A);
+  // console.log("filter & sorted", A);
 
   let x = 1;
 
@@ -41,7 +45,7 @@ function solution(A) {
     // if we find a smaller number no need to continue, cause the array is sorted
     console.log("X", x);
     if (x < A[i]) {
-      console.log("menr");
+      // console.log("menr");
       return x;
     }
     x = A[i] + 1;
